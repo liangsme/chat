@@ -6,6 +6,7 @@ def read_file(filename):
             lines.append(line.strip())
     return lines
 
+
 def convert(lines):
     person = None
     allen_word_count = 0
@@ -37,15 +38,10 @@ def convert(lines):
     print('allen說了', allen_word_count, '個字', '傳了', allen_sticker_count,'個貼圖','傳了', allen_image_count,'個圖片')
     print('viki說了', viki_word_count, '個字', '傳了', viki_sticker_count, '個貼圖','傳了', viki_image_count,'個圖片')
 
-def write_file(filename, lines):
-    with open(filename, 'w')as f:
-        for line in lines:
-            f.write(line + '\n')
 
 def main():
     lines = read_file('-LINE-Viki.txt') #因為有return,所以可以把他回傳的值存下來,我們將他存成lines
     lines = convert(lines)
-    #write_file('output.txt', lines) #為什麼寫入LINES?那上面CONVERT回傳的NEW是幹嘛的???
 main()
 
 
